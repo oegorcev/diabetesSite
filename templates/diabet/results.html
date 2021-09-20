@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="result_header">
+    <div class="col-md-12">
+        <div class="text_align_center">
+            <br> <br> 
+            <h1 class="white_color">Ваши результаты тестирования:</h1>
+            <br> <br>
+        </div>
+    </div>
+</div>
+    
+
+<div class="section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full center">
+                    <div class="heading_main ">
+                        <h1>1) Шкала  <span class="orange_color">FINDRISK</span>:<br>  {{FINDRISK_SCORE}}<br> </h1>
+                        <br><br>
+                        <h1>2)  <span class="orange_color">Нейронная сеть</span>, обученная на данных <a class="blue_color" href="https://data.austintexas.gov/Health-and-Community-Services/Austin-Public-Health-Diabetes-Self-Management-Educ/48iy-4sbg">Остинского департмента здаровохранения:</a><br>  {{MODEL_SCORE}}</h1>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

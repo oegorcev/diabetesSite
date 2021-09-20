@@ -1,0 +1,521 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% csrf_token %}
+
+<link href="https://cdn.jotfor.ms/static/formCss.css?3.3.17796" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/baby_blue.css?3.3.17796" />
+<link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.17796" />
+
+
+<div class="container">
+    <div class="center">
+        <form class="jotform-form" action="{% url 'result' %}" method="post" name="diabetes_form" accept-charset="utf-8" autocomplete="on">
+            {% csrf_token %}
+            <div role="main" class="form-all">
+                <ul class="form-section page-section">
+
+                    <li id="cid_3" class="form-input-wide" data-type="control_head">
+                        <div style="display:table;width:100%">
+                            <div class="form-header-group hasImage header-large" data-imagealign="Left">
+                                <div class="header-text httal htvat">
+                                    <h1 id="header_3" class="form-header" data-component="header">
+                                        Тестирование на шанс развития у вас сахарного диабета
+                                    </h1>
+                                    <div id="subHeader_3" class="form-subHeader">
+                                        Для выявления шанса развития риска сахарного диабета используется шкала FINDRISC и две разработанные модели машинного обучения.
+                                        <br> * отмечены обязательные пункты
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_age" id="id_1">
+                        <label class="form-label form-label-left" id="label_1" for="first_1">
+                        Ваш возраст
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_4" class="form-input jf-required">
+                        <div data-wrapper-react="true" class="extended">
+                            <span class="form-sub-label-container " style="vertical-align:top" data-input-type="first">
+                                <input type="number" id="first_4" name="age" class="form-textbox validate[required]" size="10" value="" data-component="first" aria-labelledby="label_4 sublabel_4_first" required="" />
+                                <label class="form-sub-label" for="first_4" id="sublabel_4_first" style="min-height:13px" aria-hidden="false"> Полных лет </label>
+                            </span>
+                        </div>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_fullname" id="id_2">
+                        <label class="form-label form-label-left" id="label_2" for="first_2">
+                            Пол
+                            <span class="form-required">
+                                *
+                            </span>
+                            </label>
+                        <select id="gender" name="gender">
+                            <option value="0">Женский</option>
+                            <option value="1">Мужской</option>
+                        </select>
+                    </li>
+    
+                    <li class="form-line jf-required" data-type="control_fullname" id="id_3">
+                        <label class="form-label form-label-left" id="label_3" for="first_3">
+                            Раса
+                            <span class="form-required">
+                                *
+                            </span>
+                            </label>
+                        <select id="race" name="race">
+                            <option value="0">Индеец</option>
+                            <option value="1">Испанец</option>
+                            <option value="2">Черный</option>
+                            <option value="3" selected>Белый</option>
+                            <option value="4">Азиат</option>
+                            <option value="5">Другая</option>
+                        </select>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_fullname" id="id_4">
+                        <label class="form-label form-label-left" id="label_4" for="first_4">
+                            Образование (Что вы окончили)
+                            <span class="form-required">
+                                *
+                            </span>
+                            </label>
+                        <select id="education" name="education">
+                            <option value="0">Университет и выше</option>
+                            <option value="1" selected>Начальная школа</option>
+                            <option value="2">Средняя школа</option>
+                            <option value="3">Старшая школа</option>
+                        </select>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_textbox" id="id_6">
+                        <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6">
+                        Рост (в см)
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_6" class="form-input jf-required">
+                            <input type="number" step="any" id="input_6" name="height" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" maxLength="255" placeholder=" " data-component="textbox" aria-labelledby="label_6" required="" />
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_textbox" id="id_6">
+                        <label class="form-label form-label-left form-label-auto" id="label_6" for="input_6">
+                        Масса тела (в КГ)
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_6" class="form-input jf-required">
+                            <input type="number" step="any" id="input_6" name="weight" data-type="input-textbox" class="form-textbox validate[required]" size="20" value="" maxLength="255" placeholder=" " data-component="textbox" aria-labelledby="label_6" required="" />
+                        </div>
+                    </li>
+                    
+                    <li class="form-line jf-required" data-type="control_fullname" id="id_4">
+                        <label class="form-label form-label-left" id="label_4" for="first_4">
+                            Ваши знания о диабете
+                            <span class="form-required">
+                                *
+                            </span>
+                            </label>
+                        <select id="DK" name="DK">
+                            <option value="0">Плохие</option>
+                            <option value="1" selected>Умеренные</option>
+                            <option value="2">Хорошие</option>
+                        </select>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_fullname" id="id_4">
+                        <label class="form-label form-label-left" id="label_4" for="first_4">
+                            Был ли сахарный диабет у кого-то из ваших родственников?
+                            <span class="form-required">
+                                *
+                            </span>
+                            </label>
+                        <select id="diabete_family" name="diabete_family">
+                            <option value="none">Нет</option>
+                            <option value="far" selected>Дальние (дедушки/бабушки, тети, дяди, двоюродная родня)</option>
+                            <option value="relatives">Близкие (родители, братья/сестры, собственные дети)</option>
+                        </select>
+                    </li>
+
+                    <li class="form-line" data-type="control_text" id="id_8">
+                        <div id="cid_8" class="form-input-wide">
+                            <div id="text_8" class="form-html" data-component="text">
+                                <p><span style="font-size:small;color:#888888;"> </span></p>
+                                <div class="ss-q-title">
+                                    <span style="color:#000000;">
+                                        <strong>Выберите подходящий ответ. *</strong>
+                                    </span>
+                                    </div>
+                                    <div class="ss-q-help ss-secondary-text">
+                                    <span style="color:#000000;">
+                                        <strong> </strong>
+                                    </span>
+                                    <span><strong><em>Выберите подходящий промежуток или ответ.</em></strong></span>
+                                    <strong> </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_9">
+                        <label class="form-label form-label-left" id="label_9" for="input_9">
+                            Окружность талии, измеренная под ребрами (обычно на уровне пупка)
+                            <span class="form-required">
+                                *
+                            </span>
+                        </label>
+                        <div id="cid_9" class="form-input jf-required">
+                        <span class="form-sub-label-container " style="vertical-align:top">
+                            <table role="radiogroup" aria-labelledby="label_9 sublabel_input_9_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                            <tbody>
+                                <tr>
+                                <th style="text-align:center">
+                                    <label for="input_9_1"> Мужчины:  меньше 94 см <br> Женщины: менее 80 см </label>
+                                </th>
+                                <th style="text-align:center">
+                                    <label for="input_9_2"> 94 - 102 см <br> 80 - 88 см </label>
+                                </th>
+                                <th style="text-align:center">
+                                    <label for="input_9_3"> Более 102 см <br> более 88 см </label>
+                                </th>
+                                </tr>
+                                <tr>
+                                <td style="text-align:center">
+                                    <input type="radio" class="form-radio validate[required]" name="waist" value="0" title="0" id="input_9_1" required="" />
+                                </td>
+                                <td style="text-align:center">
+                                    <input type="radio" class="form-radio validate[required]" name="waist" value="1" title="1" id="input_9_2" required="" />
+                                </td>
+                                <td style="text-align:center">
+                                    <input type="radio" class="form-radio validate[required]" name="waist" value="2" title="2" id="input_9_3" required="" />
+                                </td>
+
+                                </tr>
+                            </tbody>
+                            </table>
+                        </span>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_10">
+                        <label class="form-label form-label-left form-label-auto" id="label_10" for="input_10">
+                        Вы курите?
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_10" class="form-input jf-required">
+                            <span class="form-sub-label-container " style="vertical-align:top">
+                                <table role="radiogroup" aria-labelledby="label_10 sublabel_input_10_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                                <tbody>
+                                    <tr>
+                                        <th style="text-align:center">
+                                            <label for="input_10_1"> Курю </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_10_2"> Пробовал, но <br> сейчас не курю </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_10_3"> Никогда не курил </label>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="smoking" value="1" title="1" id="input_10_1" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="smoking" value="2" title="2" id="input_10_2" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="smoking" value="3" title="3" id="input_10_3" required="" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <label class="form-sub-label" id="sublabel_input_10_description" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> 1 is Poor, 5 is Excellent </label>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_12">
+                        <label class="form-label form-label-left form-label-auto" id="label_12" for="input_12">
+                        Сколько дней в неделю вы занимаетесь физическими упражнениями (не менее 30 минут в день)
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_12" class="form-input jf-required">
+                            <span class="form-sub-label-container " style="vertical-align:top">
+                                <table role="radiogroup" aria-labelledby="label_12 sublabel_input_12_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                                <tbody>
+                                    <tr>
+                                        <th style="text-align:center">
+                                            <label for="input_12_1"> 0 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_12_1"> 1 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_12_2"> 2 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_12_3"> 3 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_12_4"> 4 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_12_5"> 5 и более </label>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="exercise" value="0" title="0" id="input_12_0" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="exercise" value="1" title="1" id="input_12_1" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="exercise" value="2" title="2" id="input_12_2" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="exercise" value="3" title="3" id="input_12_3" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="exercise" value="4" title="4" id="input_12_4" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="exercise" value="5" title="5" id="input_12_5" required="" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <label class="form-sub-label" id="sublabel_input_12_description" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> 1 is Poor, 5 is Excellent </label>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_13">
+                        <label class="form-label form-label-left form-label-auto" id="label_13" for="input_13">
+                        Сколько дней в неделю вы едите фрукты и овощи
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_13" class="form-input jf-required">
+                            <span class="form-sub-label-container " style="vertical-align:top">
+                                <table role="radiogroup" aria-labelledby="label_13 sublabel_input_13_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                                <tbody>
+                                    <tr>
+                                        <th style="text-align:center">
+                                            <label for="input_13_1"> 0 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_13_2"> 1-2 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_13_3"> 3-4 </label>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <label for="input_13_4"> 5 и более </label>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="fvc" value="0" title="0" id="input_13_1" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="fvc" value="1" title="1" id="input_13_2" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="fvc" value="2" title="2" id="input_13_3" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="fvc" value="3" title="3" id="input_13_4" required="" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <label class="form-sub-label" id="sublabel_input_13_description" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> 1 is Poor, 5 is Excellent </label>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_14">
+                        <label class="form-label form-label-left form-label-auto" id="label_14" for="input_14">
+                        Приходилось ли вам принимать антигипертензивные препараты на регулярной основе?
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_14" class="form-input jf-required">
+                            <span class="form-sub-label-container " style="vertical-align:top">
+                                <table role="radiogroup" aria-labelledby="label_14 sublabel_input_14_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                                <tbody>
+                                    <td>
+                                        <label for="input_14_worst" aria-hidden="true"> Да </label>
+                                    </td>
+                                    <td style="text-align:center">
+                                        <input type="radio" class="form-radio validate[required]" name="preparats" value="1" title="1" id="input_14_1" required="" />
+                                    </td>
+                                    <td style="text-align:center">
+                                        <input type="radio" class="form-radio validate[required]" name="preparats" value="0" title="0" id="input_14_2" required="" />
+                                    </td>
+                                    <td>
+                                        <label for="input_14_best" aria-hidden="true"> Нет </label>
+                                    </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <label class="form-sub-label" id="sublabel_input_14_description" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> 1 is Poor, 5 is Excellent </label>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_15">
+                        <label class="form-label form-label-left form-label-auto" id="label_15" for="input_15">
+                        Находили ли у вас когда-нибудь повышение глюкозы крови (при профосмотре, во время болезни, при беременности)?
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_15" class="form-input jf-required">
+                            <span class="form-sub-label-container " style="vertical-align:top">
+                                <table role="radiogroup" aria-labelledby="label_15 sublabel_input_15_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                                <tbody>
+
+                                    <tr>
+                                    <td>
+                                        <label for="input_15_worst" aria-hidden="true"> Да </label>
+                                    </td>
+                                    <td style="text-align:center">
+                                        <input type="radio" class="form-radio validate[required]" name="high_glucose" value="1" title="1" id="input_15_1" required="" />
+                                    </td>
+                                    <td style="text-align:center">
+                                        <input type="radio" class="form-radio validate[required]" name="high_glucose" value="0" title="0" id="input_15_2" required="" />
+                                    </td>
+                                    <td>
+                                        <label for="input_15_best" aria-hidden="true"> Нет </label>
+                                    </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <label class="form-sub-label" id="sublabel_input_15_description" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> 1 is Poor, 5 is Excellent </label>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_16">
+                        <label class="form-label form-label-left form-label-auto" id="label_16" for="input_16">
+                        У вас повышенное давление?
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_16" class="form-input jf-required">
+                            <span class="form-sub-label-container " style="vertical-align:top">
+                                <table role="radiogroup" aria-labelledby="label_16 sublabel_input_16_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label for="input_16_worst" aria-hidden="true"> Да </label>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="high_blood_presure" value="1" title="1" id="input_16_1" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="high_blood_presure" value="0" title="0" id="input_16_2" required="" />
+                                        </td>
+                                        <td>
+                                            <label for="input_16_best" aria-hidden="true"> Нет </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <label class="form-sub-label" id="sublabel_input_16_description" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> 1 is Poor, 5 is Excellent </label>
+                            </span>
+                        </div>
+                    </li>
+
+                    <li class="form-line jf-required" data-type="control_scale" id="id_17">
+                        <label class="form-label form-label-left form-label-auto" id="label_17" for="input_17">
+                        У вас есть болезни сердца?
+                        <span class="form-required">
+                            *
+                        </span>
+                        </label>
+                        <div id="cid_17" class="form-input jf-required">
+                            <span class="form-sub-label-container " style="vertical-align:top">
+                                <table role="radiogroup" aria-labelledby="label_17 sublabel_input_17_description" cellPadding="4" cellSpacing="0" class="form-scale-table" data-component="scale">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label for="input_17_worst" aria-hidden="true"> Да </label>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="heart_diseases" value="1" title="1" id="input_17_1" required="" />
+                                        </td>
+                                        <td style="text-align:center">
+                                            <input type="radio" class="form-radio validate[required]" name="heart_diseases" value="0" title="0" id="input_17_2" required="" />
+                                        </td>
+                                        <td>
+                                            <label for="input_17_best" aria-hidden="true"> Нет </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <label class="form-sub-label" id="sublabel_input_17_description" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="false"> 1 is Poor, 5 is Excellent </label>
+                            </span>
+                        </div>
+                    </li>
+                
+                    <li class="form-line" data-type="control_textarea" id="id_5">
+                        <label class="form-label form-label-left form-label-auto" id="label_5" for="input_5"> Предложения и пожелания </label>
+                        <div id="cid_5" class="form-input">
+                            <textarea id="input_5" maxlength = "500" class="form-textarea" name="suggestions" cols="40" rows="6" data-component="textarea" aria-labelledby="label_5"></textarea>
+                        </div>
+                    </li>
+
+                    <li class="form-line" data-type="control_widget" id="id_19">
+                        <div id="cid_19" class="">
+                            <div style="width:100%;text-align:Left" data-component="widget-directEmbed">
+                                <div class="direct-embed-widgets mobile-responsive-widget " data-type="direct-embed" style="width:1px;min-height:1px">
+                                    <script type="text/javascript" src="https://widgets.jotform.io/mobileResponsive/mobile.responsive.js"></script>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="form-line" data-type="control_button" id="id_2">
+                        <div id="cid_2" class="form-input-wide">
+                            <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                                <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+                                Отправить
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+<script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.17796" type="text/javascript"></script>
+<script src="https://js.jotform.com/vendor/postMessage.js?3.3.17796" type="text/javascript"></script>
+<script src="https://js.jotform.com/WidgetsServer.js?v=1589704609753" type="text/javascript"></script>
+
+{% endblock content %}
+
+
+

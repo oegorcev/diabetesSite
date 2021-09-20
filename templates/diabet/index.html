@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- Start Banner -->
+  <div class="section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full center">
+                    <div class="heading_main text_align_center">
+                        <h2>Диабет <span class="red_color">очень опасен</span></h2>
+                        <br>
+                        <h3>Поэтому лучше заранее начинать следить<br> за своим здоровьем.</h3>
+                        <br>
+                        <h4>Пройдите анектирование и нейронная сеть, обученная на большой выборке пациентов, предскажет Вам, больны Вы на данный
+                            момент или нет. А опросник FINDRISK предскажет Вам, какой у Вас шанс заболеть сахарным диабетом
+                            в ближайшие годы.*</h4>
+                        <br>
+                        <p>*Полученные результаты не могут трактоваться как профессиональные медицинские рекомендации и предоставляются исключительно в ознакомительных целях.</p>
+                        <li><a class="nav-link active" style="background: green ;color: white;" href="{% url 'poll' %}">Пройти тестирование</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
